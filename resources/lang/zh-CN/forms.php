@@ -159,6 +159,7 @@ return [
             'enable_external_dependencies' => '启用第三方服务 (Google Fonts, Tracker 等)',
             'show_timezone'                => '显示状态页所在的时区',
             'only_disrupted_days'          => '仅显示有故障的日期',
+            'only_display_incidents'       => 'Only display incidents in the timeline (no matter the date)?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics 代码',

@@ -159,6 +159,7 @@ return [
             'enable_external_dependencies' => 'Включить зависимости (Google шрифты, трекеры, и др...)',
             'show_timezone'                => 'Show the timezone the status page is running in.',
             'only_disrupted_days'          => 'Показывать только дни, содержащие инциденты на шкале времени?',
+            'only_display_incidents'       => 'Only display incidents in the timeline (no matter the date)?',
         ],
         'analytics' => [
             'analytics_google'       => 'Код Google Analytics',

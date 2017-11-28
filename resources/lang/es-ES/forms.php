@@ -159,6 +159,7 @@ return [
             'enable_external_dependencies' => 'Activar Dependencias de Terceros (Google Fonts, Trackers, etc...)',
             'show_timezone'                => 'Mostrar la zona horaria en la que se está ejecutando la página de estado.',
             'only_disrupted_days'          => '¿Solamente mostrar en la línea de tiempo días que contengan incidentes?',
+            'only_display_incidents'       => '¿Mostrar únicamente incidentes en la línea temporal (sin importar la fecha)?',
         ],
         'analytics' => [
             'analytics_google'       => 'Código de Google Analytics',

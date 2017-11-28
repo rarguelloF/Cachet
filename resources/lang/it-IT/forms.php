@@ -159,6 +159,7 @@ return [
             'enable_external_dependencies' => 'Attivare le dipendenze di terze parti (Google Fonts, Trackers, ecc...)',
             'show_timezone'                => 'Visualizza il fuso orario nella pagina stato.',
             'only_disrupted_days'          => 'Mostra solo i giorni contenenti incidenti nella timeline?',
+            'only_display_incidents'       => 'Only display incidents in the timeline (no matter the date)?',
         ],
         'analytics' => [
             'analytics_google'       => 'Codice Google Analytics',

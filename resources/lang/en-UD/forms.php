@@ -159,6 +159,7 @@ return [
             'enable_external_dependencies' => 'crwdns1200:0crwdne1200:0',
             'show_timezone'                => 'crwdns1201:0crwdne1201:0',
             'only_disrupted_days'          => 'crwdns1202:0crwdne1202:0',
+            'only_display_incidents'       => 'Only display incidents in the timeline (no matter the date)?',
         ],
         'analytics' => [
             'analytics_google'       => 'crwdns1203:0crwdne1203:0',

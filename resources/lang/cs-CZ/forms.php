@@ -159,6 +159,7 @@ return [
             'enable_external_dependencies' => 'Povolit závislosti třetích stran (Google písma, Trackery, atd...)',
             'show_timezone'                => 'Zobrazit časové pásmo, ve které je zobrazena stavová stránka.',
             'only_disrupted_days'          => 'Zobrazit na časové ose pouze dny, kdy došlo k incidentu?',
+            'only_display_incidents'       => 'Only display incidents in the timeline (no matter the date)?',
         ],
         'analytics' => [
             'analytics_google'       => 'Kód pro Google Analytics',

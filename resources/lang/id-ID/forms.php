@@ -159,6 +159,7 @@ return [
             'enable_external_dependencies' => 'Aktifkan Dependensi Pihak Ketiga (Font Google, Trackers, dll...)',
             'show_timezone'                => 'Tampilkan zona waktu dimana halaman status berjalan.',
             'only_disrupted_days'          => 'Hanya tampilkan hari yang berisi insiden dalam linimasa?',
+            'only_display_incidents'       => 'Only display incidents in the timeline (no matter the date)?',
         ],
         'analytics' => [
             'analytics_google'       => 'Kode Google Analytics',

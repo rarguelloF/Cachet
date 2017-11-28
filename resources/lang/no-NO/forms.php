@@ -159,6 +159,7 @@ return [
             'enable_external_dependencies' => 'Aktiver tredjeparts avhengigheter (Google Fonts, Trackers, etc...)',
             'show_timezone'                => 'Vis tidssonen statussiden kjører i.',
             'only_disrupted_days'          => 'Bare Vis dager som inneholder hendelser i tidslinjen?',
+            'only_display_incidents'       => 'Only display incidents in the timeline (no matter the date)?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics-koden',

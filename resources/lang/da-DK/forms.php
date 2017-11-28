@@ -159,6 +159,7 @@ return [
             'enable_external_dependencies' => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
             'show_timezone'                => 'Show the timezone the status page is running in.',
             'only_disrupted_days'          => 'Only show days containing incidents in the timeline?',
+            'only_display_incidents'       => 'Only display incidents in the timeline (no matter the date)?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics kode',

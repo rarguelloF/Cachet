@@ -159,6 +159,7 @@ return [
             'enable_external_dependencies' => 'Włącz zależności zewnętrznych dostawców (Google Fonts, Trackers, etc...)',
             'show_timezone'                => 'Pokazuj strefę czasową w której działa strona statusu.',
             'only_disrupted_days'          => 'Czy pokazywać tylko dni zawierające zdarzenia w linii czasu?',
+            'only_display_incidents'       => 'Only display incidents in the timeline (no matter the date)?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics Code',
