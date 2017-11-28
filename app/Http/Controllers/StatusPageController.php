@@ -38,8 +38,8 @@ use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
  */
 class StatusPageController extends AbstractApiController
 {
-
-    private function showIndexByDate() {
+    private function showIndexByDate()
+    {
         $today = Date::now();
         $startDate = Date::now();
 
@@ -93,8 +93,8 @@ class StatusPageController extends AbstractApiController
             ->withNextDate($startDate->copy()->addDays($appIncidentDays)->toDateString());
     }
 
-
-    private function showIndexByQuantity() {
+    private function showIndexByQuantity()
+    {
         $appIncidentQuantity = (int) Config::get('setting.app_incident_days', 7);
         $page = Binput::get('start_date', 0);
 
