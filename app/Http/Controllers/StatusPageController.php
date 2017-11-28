@@ -38,13 +38,8 @@ use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
  */
 class StatusPageController extends AbstractApiController
 {
-    /**
-     * Displays the status page.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function showIndex()
-    {
+
+    private function showIndexByDate() {
         $today = Date::now();
         $startDate = Date::now();
 
@@ -96,6 +91,50 @@ class StatusPageController extends AbstractApiController
             ->withCanPageBackward(Incident::where('occurred_at', '<', $startDate->format('Y-m-d'))->count() > 0)
             ->withPreviousDate($startDate->copy()->subDays($appIncidentDays)->toDateString())
             ->withNextDate($startDate->copy()->addDays($appIncidentDays)->toDateString());
+    }
+
+
+    private function showIndexByQuantity() {
+        $appIncidentQuantity = (int) Config::get('setting.app_incident_days', 7);
+        $page = Binput::get('start_date', 0);
+
+        $allIncidents = Incident::where('visible', '>=', (int) !Auth::check())->
+        limit($appIncidentQuantity)->offset($appIncidentQuantity * $page)->
+        orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
+            return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
+        });
+
+        // Sort the array so it takes into account the added days
+        $allIncidents = $allIncidents->sortBy(function ($value, $key) {
+            return strtotime($key);
+        }, SORT_REGULAR, true);
+
+        $numIncidents = Incident::count();
+        $numPages = round($numIncidents / $appIncidentQuantity);
+
+        return View::make('index')
+            ->withDaysToShow($appIncidentQuantity)
+            ->withAllIncidents($allIncidents)
+            ->withCanPageForward($page > 0)
+            ->withCanPageBackward(($page + 1) < $numPages)
+            ->withPreviousDate($page + 1)
+            ->withNextDate($page - 1);
+    }
+
+    /**
+     * Displays the status page.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showIndex()
+    {
+        $only_display_incidents = Config::get('setting.app_only_display_incidents', false);
+
+        if ($only_display_incidents) {
+            return $this->showIndexByQuantity();
+        }
+
+        return $this->showIndexByDate();
     }
 
     /**

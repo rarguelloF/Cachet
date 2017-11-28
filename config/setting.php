@@ -99,4 +99,16 @@ return [
     */
 
     'only_disrupted_days' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Only display incidents
+    |--------------------------------------------------------------------------
+    |
+    | Whether to only display incidents, no matter the date. In this case, the
+    | number of days to show setting becomes the number of incidents to show.
+    |
+    */
+
+    'only_display_incidents' => false,
 ];
