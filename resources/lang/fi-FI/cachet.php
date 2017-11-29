@@ -52,9 +52,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] järjestelmät ovat toiminnassa| [2, Inf] Kaikki järjestelmät ovat toiminnassa',
-        'bad'   => '[0,1] järjestelmässä on tällä hetkellä ongelmia| [2, Inf] Joissakin järjestelmissä on ongelmia',
-        'major' => '[0,1] Palvelussa on merkittävä katkos| [2, Inf] Joissakin järjestelmissä on merkittävä katkoksia',
+        'good'  => '[0,1]järjestelmät ovat toiminnassa|[2, Inf]Kaikki järjestelmät ovat toiminnassa',
+        'bad'   => '[0,1]järjestelmässä on tällä hetkellä ongelmia|[2, Inf]Joissakin järjestelmissä on ongelmia',
+        'major' => '[0,1]Palvelussa on merkittävä katkos|[2, Inf]Joissakin järjestelmissä on merkittävä katkoksia',
     ],
 
     'api' => [

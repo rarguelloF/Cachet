@@ -52,9 +52,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System działa poprawnie|[2,Inf] Wszystkie systemy działają poprawnie',
-        'bad'   => '[0,1] W systemie obecnie występują problemy|[2,Inf] W niektórych systemach występują problemy',
-        'major' => '[0,1] System jest poważnie przeciążony|[2,Inf] Niektóre systemy są poważnie przeciążone',
+        'good'  => '[0,1]System działa poprawnie|[2,Inf]Wszystkie systemy działają poprawnie',
+        'bad'   => '[0,1]W systemie obecnie występują problemy|[2,Inf]W niektórych systemach występują problemy',
+        'major' => '[0,1]System jest poważnie przeciążony|[2,Inf]Niektóre systemy są poważnie przeciążone',
     ],
 
     'api' => [

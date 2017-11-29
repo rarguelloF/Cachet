@@ -52,9 +52,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Système opérationnel|[2,Inf] Tous les systèmes sont opérationnels',
-        'bad'   => '[0,1] Le système rencontre actuellement des problèmes|[2,Inf] Certains systèmes rencontrent des problèmes',
-        'major' => '[0,1] Le service rencontre une panne majeure|[2,Inf] Certains systèmes rencontrent une panne majeure',
+        'good'  => '[0,1]Système opérationnel|[2,Inf]Tous les systèmes sont opérationnels',
+        'bad'   => '[0,1]Le système rencontre actuellement des problèmes|[2,Inf]Certains systèmes rencontrent des problèmes',
+        'major' => '[0,1]Le service rencontre une panne majeure|[2,Inf]Certains systèmes rencontrent une panne majeure',
     ],
 
     'api' => [
