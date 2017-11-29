@@ -95,12 +95,31 @@ class StatusPageController extends AbstractApiController
 
     private function showIndexByQuantity()
     {
-        $appIncidentQuantity = (int) Config::get('setting.app_incident_days', 7);
+        $appIncidentDays = (int) Config::get('setting.app_incident_days', 7);
         $page = Binput::get('start_date', 0);
 
-        $allIncidents = Incident::where('visible', '>=', (int) !Auth::check())->
-        limit($appIncidentQuantity)->offset($appIncidentQuantity * $page)->
-        orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
+        $allIncidentDays = Incident::where('visible', '>=', (int) !Auth::check())
+        ->select('occurred_at')->distinct()->orderBy('occurred_at', 'desc')->get()->map(function (Incident $incident) {
+            return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
+        })->unique()->values();
+
+        $numIncidentDays = count($allIncidentDays);
+        $numPages = round($numIncidentDays / $appIncidentDays);
+
+        $startDate = Date::now();
+        $endDate = Date::now();
+
+        $selectedDays = $allIncidentDays->slice($page * $appIncidentDays, $appIncidentDays)->all();
+
+        if (count($selectedDays) > 0) {
+            $startDate = Date::createFromFormat('Y-m-d', array_values(array_slice($selectedDays, -1))[0]);
+            $endDate = Date::createFromFormat('Y-m-d', array_values($selectedDays)[0]);
+        }
+
+        $allIncidents = Incident::where('visible', '>=', (int) !Auth::check())->whereBetween('occurred_at', [
+            $startDate->format('Y-m-d').' 00:00:00',
+            $endDate->format('Y-m-d').' 23:59:59',
+        ])->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
             return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
         });
 
@@ -109,11 +128,8 @@ class StatusPageController extends AbstractApiController
             return strtotime($key);
         }, SORT_REGULAR, true);
 
-        $numIncidents = Incident::count();
-        $numPages = round($numIncidents / $appIncidentQuantity);
-
         return View::make('index')
-            ->withDaysToShow($appIncidentQuantity)
+            ->withDaysToShow($appIncidentDays)
             ->withAllIncidents($allIncidents)
             ->withCanPageForward($page > 0)
             ->withCanPageBackward(($page + 1) < $numPages)
