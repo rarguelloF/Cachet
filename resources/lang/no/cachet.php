@@ -43,9 +43,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Systemet er operativt| [2, Inf] Alle systemer er operative',
-        'bad'   => '[0,1] Systemet har problemer| [2, Inf] Noen systemer har problemer',
-        'major' => '[0,1] Det er et større brudd i systemet| [2, Inf] Noen systemer har større brudd',
+        'good'  => '[0,1]Systemet er operativt|[2, Inf]Alle systemer er operative',
+        'bad'   => '[0,1]Systemet har problemer|[2, Inf]Noen systemer har problemer',
+        'major' => '[0,1]Det er et større brudd i systemet|[2, Inf]Noen systemer har større brudd',
     ],
 
     'api' => [

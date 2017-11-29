@@ -52,9 +52,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Služba je v provozu|[2,Inf] Všechny služby fungují bez problémů',
-        'bad'   => '[0,1] Služba má problémy|[2,Inf] Některá ze služeb má problémy',
-        'major' => '[0,1] Služba má celkový výpadek|[2,Inf] Některé služby mají celkový výpadek',
+        'good'  => '[0,1]Služba je v provozu|[2,Inf]Všechny služby fungují bez problémů',
+        'bad'   => '[0,1]Služba má problémy|[2,Inf]Některá ze služeb má problémy',
+        'major' => '[0,1]Služba má celkový výpadek|[2,Inf]Některé služby mají celkový výpadek',
     ],
 
     'api' => [
