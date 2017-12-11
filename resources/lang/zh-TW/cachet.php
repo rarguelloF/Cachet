@@ -28,7 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => '沒有任何報告',
-        'past'         => 'Past Incidents',
+        'past'         => 'Incident Status',
         'stickied'     => 'Stickied 事件',
         'scheduled'    => '排程維護',
         'scheduled_at' => '，於:timestamp',

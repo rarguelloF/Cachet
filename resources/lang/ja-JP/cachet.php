@@ -28,7 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'インシデントはありません',
-        'past'         => '過去のインシデント',
+        'past'         => 'インシデント状況',
         'stickied'     => 'Stickied Incidents',
         'scheduled'    => '計画メンテナンス',
         'scheduled_at' => ', 予定日時 :timestamp',

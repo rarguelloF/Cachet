@@ -27,7 +27,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'No incidents reported',
-        'past'          => 'Past Incidents',
+        'past'          => 'Incident Status',
         'previous_week' => 'Previous',
         'next_week'     => 'Next',
         'scheduled'     => 'תחזוקה מתוזמנת',

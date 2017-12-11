@@ -28,7 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'No incidents reported',
-        'past'         => 'Past Incidents',
+        'past'         => 'Incident Status',
         'stickied'     => 'Stickied Incidents',
         'scheduled'    => 'Mirëmbajtje planifikuar',
         'scheduled_at' => ', planifiko :timestamp',
